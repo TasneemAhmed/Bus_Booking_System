@@ -47,30 +47,25 @@ namespace BusBookingSystem.Controllers
         It is only useful when you are passing sensitive information to the server.
         sensitive information
         */
+        [HttpGet] //hit by the action link("Add") in Add view.
         public ActionResult Add()
         {
             return View();
         }
 
-        [HttpPost] 
+        [HttpPost] //hit when click the button "Create" in the view.
         public ActionResult Add(Driver createNewDriver) //mvc smart enough to bind this model to form(request) data because form data has pefix Driver
         {
-            if(ModelState.IsValid)
-            {// validtion (Data annotaion = form data.
+            
+            // validtion (Data annotaion = form data.
                 db.Drivers.Add(createNewDriver); //it's only added in memory.
                 db.SaveChanges(); //it's added persitent in database.
                 return RedirectToAction("Index"); //after saveing data back to Index(list of drivers). 
-            }
+            
             /* when the request data to the application,
              * mvc framework will use this proprty to inititalize as parameters in action.
              */
-             else
-            {
-                    return View(createNewDriver);
-            }
-        
            
-
         }
 
         //An Edit link sends HttpGet request to the Edit action method of DriverController with corresponding PersonId in the query string.
