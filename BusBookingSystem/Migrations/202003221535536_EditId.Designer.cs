@@ -7,13 +7,13 @@ namespace BusBookingSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class TryToFixBug : IMigrationMetadata
+    public sealed partial class EditId : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TryToFixBug));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(EditId));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003192223131_TryToFixBug"; }
+            get { return "202003221535536_EditId"; }
         }
         
         string IMigrationMetadata.Source

@@ -11,7 +11,7 @@ namespace BusBookingSystem.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public byte PersonId { get; set; } //0 to 255
+        public int Id { get; set; } 
 
         [Required(ErrorMessage = "You have enter an Email")]
         [Display(Name = "Email")]
@@ -23,7 +23,7 @@ namespace BusBookingSystem.Models
 
         [Required(ErrorMessage = "You have enter  Phone Number")]
         [Display(Name = "Phone Number")]
-        public long PhoneNumber { get; set; } //0 to 18,446,744,,073,709,551,615
+        public long PhoneNumber { get; set; } //-18,446,744,,073,709,551,615 to 0 & 0 to 18,446,744,,073,709,551,615
 
         [Required(ErrorMessage = "You have enter Adress")]
         [Display(Name = "Adress")]

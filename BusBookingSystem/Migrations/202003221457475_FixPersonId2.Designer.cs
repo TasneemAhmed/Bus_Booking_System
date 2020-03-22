@@ -7,13 +7,13 @@ namespace BusBookingSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class EditPerson : IMigrationMetadata
+    public sealed partial class FixPersonId2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EditPerson));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FixPersonId2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003191126077_EditPerson"; }
+            get { return "202003221457475_FixPersonId2"; }
         }
         
         string IMigrationMetadata.Source

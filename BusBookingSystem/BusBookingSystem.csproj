@@ -174,33 +174,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003181950544_InitialMigration.cs" />
-    <Compile Include="Migrations\202003181950544_InitialMigration.Designer.cs">
-      <DependentUpon>202003181950544_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202003221253561_FixPersonId.cs" />
+    <Compile Include="Migrations\202003221253561_FixPersonId.Designer.cs">
+      <DependentUpon>202003221253561_FixPersonId.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003182023225_EditDriverAndPerson.cs" />
-    <Compile Include="Migrations\202003182023225_EditDriverAndPerson.Designer.cs">
-      <DependentUpon>202003182023225_EditDriverAndPerson.cs</DependentUpon>
+    <Compile Include="Migrations\202003221457475_FixPersonId2.cs" />
+    <Compile Include="Migrations\202003221457475_FixPersonId2.Designer.cs">
+      <DependentUpon>202003221457475_FixPersonId2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003182046014_EditUser.cs" />
-    <Compile Include="Migrations\202003182046014_EditUser.Designer.cs">
-      <DependentUpon>202003182046014_EditUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003191123486_EditDriver.cs" />
-    <Compile Include="Migrations\202003191123486_EditDriver.Designer.cs">
-      <DependentUpon>202003191123486_EditDriver.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003191126077_EditPerson.cs" />
-    <Compile Include="Migrations\202003191126077_EditPerson.Designer.cs">
-      <DependentUpon>202003191126077_EditPerson.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003191844476_AddValidationToId.cs" />
-    <Compile Include="Migrations\202003191844476_AddValidationToId.Designer.cs">
-      <DependentUpon>202003191844476_AddValidationToId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003192223131_TryToFixBug.cs" />
-    <Compile Include="Migrations\202003192223131_TryToFixBug.Designer.cs">
-      <DependentUpon>202003192223131_TryToFixBug.cs</DependentUpon>
+    <Compile Include="Migrations\202003221535536_EditId.cs" />
+    <Compile Include="Migrations\202003221535536_EditId.Designer.cs">
+      <DependentUpon>202003221535536_EditId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -292,26 +276,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003181950544_InitialMigration.resx">
-      <DependentUpon>202003181950544_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003221253561_FixPersonId.resx">
+      <DependentUpon>202003221253561_FixPersonId.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003182023225_EditDriverAndPerson.resx">
-      <DependentUpon>202003182023225_EditDriverAndPerson.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003221457475_FixPersonId2.resx">
+      <DependentUpon>202003221457475_FixPersonId2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003182046014_EditUser.resx">
-      <DependentUpon>202003182046014_EditUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003191123486_EditDriver.resx">
-      <DependentUpon>202003191123486_EditDriver.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003191126077_EditPerson.resx">
-      <DependentUpon>202003191126077_EditPerson.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003191844476_AddValidationToId.resx">
-      <DependentUpon>202003191844476_AddValidationToId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003192223131_TryToFixBug.resx">
-      <DependentUpon>202003192223131_TryToFixBug.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003221535536_EditId.resx">
+      <DependentUpon>202003221535536_EditId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

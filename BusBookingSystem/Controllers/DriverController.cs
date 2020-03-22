@@ -30,7 +30,7 @@ namespace BusBookingSystem.Controllers
         {
 
             //SingleOrDefault() : this is for single specific customer.
-            var driver = getDrivers().SingleOrDefault(c => c.PersonId == id);
+            var driver = getDrivers().SingleOrDefault(c => c.Id == id);
             if (driver == null)
             {
                 return HttpNotFound();
@@ -56,16 +56,17 @@ namespace BusBookingSystem.Controllers
         [HttpPost] //hit when click the button "Create" in the view.
         public ActionResult Add(Driver createNewDriver) //mvc smart enough to bind this model to form(request) data because form data has pefix Driver
         {
-            
-            // validtion (Data annotaion = form data.
+            /* when the request data to the application,
+            * mvc framework will use this proprty to inititalize as parameters in action.
+            */
+            if(!ModelState.IsValid)
+            {// validtion (Data annotaion != form data).
+                return View("Add", createNewDriver);
+            }
+         
                 db.Drivers.Add(createNewDriver); //it's only added in memory.
                 db.SaveChanges(); //it's added persitent in database.
                 return RedirectToAction("Index"); //after saveing data back to Index(list of drivers). 
-            
-            /* when the request data to the application,
-             * mvc framework will use this proprty to inititalize as parameters in action.
-             */
-           
         }
 
         //An Edit link sends HttpGet request to the Edit action method of DriverController with corresponding PersonId in the query string.
@@ -74,7 +75,7 @@ namespace BusBookingSystem.Controllers
         {
             //http://localhost/driver/edit/{Id
             //get the driver from db who has id = id the which come from form requst(data).
-            var driverFromDB = db.Drivers.SingleOrDefault(d => d.PersonId == id);
+            var driverFromDB = db.Drivers.SingleOrDefault(d => d.Id == id);
            
             if(driverFromDB == null)
             {
@@ -96,14 +97,13 @@ namespace BusBookingSystem.Controllers
             /*The HttpPOST Edit action method in DriverController will finally update the data into the database 
               and render an Index page with the refreshed data using the RedirectToAction method
             */
-            
             if (!ModelState.IsValid)
             {//no validtion (Data annotaion != form data request).
                 return View("Edit", "driver");
             }
             //get the driver from db who has id = id the which come from form requst(data).
             //انا هنا جيلي داتا من الفورم معمولها ايديت قبل مااعملها سيف هشوف موجود فالداتا بيز ولا ؟ موجوده هاخد الداتا بعد ماتعدلت وحطها فالداتا بيز
-            var driverFromDB = db.Drivers.SingleOrDefault(d => d.PersonId == driver.PersonId);
+            var driverFromDB = db.Drivers.SingleOrDefault(d => d.Id == driver.Id);
 
             driverFromDB.PhoneNumber = driver.PhoneNumber;
             driverFromDB.Salary = driver.Salary;
@@ -121,7 +121,7 @@ namespace BusBookingSystem.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            var driver = db.Drivers.SingleOrDefault(d => d.PersonId == id);
+            var driver = db.Drivers.SingleOrDefault(d => d.Id == id);
             db.Drivers.Remove(driver);
             db.SaveChanges();
 
